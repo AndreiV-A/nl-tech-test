@@ -1,13 +1,22 @@
 # nl-tech-test
 
-usage:
+## prepare (dev):
 
 `git clone --recursive https://github.com/AndreiV-A/nl-tech-test.git`
 
 `cd nl-tech-test`
 
-`npm ci`
+## run (dev):
+### terminal_1:
 
 `./run_dev.sh`
 
-open browser and navigate to `http://[address]:7000`
+### terminal_2:
+
+`npm ci`
+
+`npm run watch`
+
+### in browser, navigate to:
+
+`http://[address]:7000`

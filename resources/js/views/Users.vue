@@ -54,8 +54,6 @@
 						Authorization: `Bearer ${this.$store.state.token}`,
 					},
 				})
-
-				// api_users.all(this.$store.state.token)
 					.then(res => {
 						console.log('res:', res);
             			this.users = res.data.data;

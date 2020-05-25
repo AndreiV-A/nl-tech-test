@@ -57,10 +57,6 @@
 				})
 				.catch(err => {
 					this.loading = false;
-					console.log('!err:', err);
-
-					// Object.keys(err).forEach(key => console.log('k:', key, '::', err[key]));
-
 					if (err.response.status){
 						switch (err.response.status){
 							case 400:

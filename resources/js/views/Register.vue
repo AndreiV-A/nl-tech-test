@@ -51,7 +51,6 @@
 					email: this.user.email,
 					password: this.user.password,
 				})
-				// api_users.create(this.user)
 					.then((data) => {
 						console.log('res:', data);
 						this.$store.dispatch("retrieveToken", {

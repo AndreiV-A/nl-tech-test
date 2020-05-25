@@ -1987,7 +1987,6 @@ __webpack_require__.r(__webpack_exports__);
         });
       })["catch"](function (err) {
         _this.loading = false;
-        console.log('!err:', err); // Object.keys(err).forEach(key => console.log('k:', key, '::', err[key]));
 
         if (err.response.status) {
           switch (err.response.status) {
@@ -2100,8 +2099,7 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/users', {
         email: this.user.email,
         password: this.user.password
-      }) // api_users.create(this.user)
-      .then(function (data) {
+      }).then(function (data) {
         console.log('res:', data);
 
         _this.$store.dispatch("retrieveToken", {
@@ -2263,8 +2261,7 @@ __webpack_require__.r(__webpack_exports__);
           Accept: 'application/json',
           Authorization: "Bearer ".concat(this.$store.state.token)
         }
-      }) // api_users.all(this.$store.state.token)
-      .then(function (res) {
+      }).then(function (res) {
         console.log('res:', res);
         _this.users = res.data.data;
       })["catch"](function (err) {

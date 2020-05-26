@@ -60,10 +60,9 @@
 					if (err.response.status){
 						switch (err.response.status){
 							case 400:
-								this.error = 'You need to input both email and password.';
-								break;
 							case 401:
 								this.error = 'Wrong email or password or both.';
+								break;
 							default:
 								this.error = 'Something went wrong.';
 						}

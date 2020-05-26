@@ -11,4 +11,4 @@ Route::post('/users', 'API\UsersController@store');
 Route::middleware('auth:api')->get('/users', 'API\UsersController@index');
 Route::middleware('auth:api')->get('/users/{user}', 'API\UsersController@show');
 
-
+Route::get('/boxfiles', 'API\BoxFilesController@index');

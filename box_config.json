@@ -1,0 +1,12 @@
+{
+  "boxAppSettings": {
+    "clientID": "e13y2iu0ne76fk1fwgamgzcr2xkrzwey",
+    "clientSecret": "9leGtIvJW38w5sTD2YrKLRBHSKVA63nS",
+    "appAuth": {
+      "publicKeyID": "3i2oxadm",
+      "privateKey": "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQI6MdxDLsxcqsCAggA\nMBQGCCqGSIb3DQMHBAiSxrkjm/jkRwSCBMje3H2QCC1kUjK3rgwbcRrfIKdyYthK\nKreaHg29lpfTcdS0k/nAgEv5GRWrhVKNHWmNqc5ZopA4ueTToGx0UHskrRtXTkHh\nc+yZHy9wJv77PEIfCh40nsPRbSOp64yC6MX3uULk3JdLjrkKxUmfyXZTeDMm/z9e\n5WpkSedwBcdjNAXVcor4GTDTsF6pkDoKDOjAy+Ul/u8tspHTDkHE20t9gcA3gqkA\n+oN6pdeWLfJ9ZQN7f4oUPoqGOvyCkFchL+WtXhO28d+mIC/5CQu30wfLcoKVSZLQ\ngmoTFnjvYUXKgm0NZpqosrMbcaWshBkKR4LIW5herhasUIlB6/LU8inXpsNKG1Ma\nP78qt0Ef38uoyCIJ7dAwfIXmyxJeCIxBZzSPq3MmF0Qfed0xr0Sl0JPV3Ka+lLgj\nkCQhVDZGqYv92jCIgpJpkBfU5LRYhDLPIivrV3Si6k/fKCX0AiZSFYzMlCLhZgZC\nuXBo4NgwnR6JfNYAnZhvCzNUXjhYq99O7WeM3QYGZguCbqeIpe+7XtwrapJDMLId\nP9/3yY70/vDmAS3cdTcAsXV1BLpPpkAtSgOqxfnLLIV8C7bekLBvHj017Vv+sVvq\n0e4jfo9xVYo1/X9w3ZWhzDNEatxUPTZLhgtSBr9VVuIkfWggo6GWM7+6dk66FswT\nWTDb2BXJeixBn/txMKeGm0lzaSgjfbxagWhBiMwkN597bOwZ8MFN97Wm9UKxV+Qs\njC/gWdz4NXebskPCpfEkJuxwdXxsWAIv7ob+dMuubYyWtb4JMlFrhUJTZyVFhAEc\nUzJAO2llneXLPJlBCzB/TyLAx2SB74aoTzcemEQQMRXFckzeWBN/279kicS/AGf4\n2d8t9odc4JePueyI9AnJOjr/UaQgCYT1chP6bsWYho/ZTIOxjK4TQuhHYkw3N1fC\nA9ba9P7zZhLHjSWEx5a7/1b9YdzUOHTazs3hBLuMtEJjnKFEu52Oh45e8Fz0o4wx\npksF6/R2vnifeoWfq67+xkkn8gKnAlrlRWMONpVoxoJStwjvPz13d15rq0TlS5/S\nnd+7kDWBTp8WUFA0nuOEXaVMmxGKBLZBnWLRN3OniPBmECsxrvn1G8RCBD2Sy9Me\nL8QmGU03FBmBg0Q5vGrNE2atclVPekaIsn5ujZBQvIARNzC0AalvRhyIkF/kyiY8\nfiKq+JRRyqWR4CVyIP5ZycRhaObHSWqQwgj8e6R+n7gRwy5yoJjeDYYl96/TU45m\nmptefAGYSMD8sI4zCc9dfQC4buNqTZB4P2m9wcG3MJnLOYmA4tKBKCNwpqw0SlCk\n/3n0L5pibaDf1byuCim1gw2lah4vDQzhWXPWJ55FrvcBSFvouorE+5w1BgQDnDos\nc29EX7ELw5W75TK3Jbl4QOpae7ovm0FrJNhGNtzai4UAfCADUfXW/thVz2RaXbD7\nJScLRC4ANZqtvBz5h+65Vt08NRPhUQOc/HVak05ah6/BDNqey2fDteLnObva3DJn\nXZsD2bbQl9YLLXqTKTscf03NJDkVzLtUjMTTJK7rcsodb99IfVnzirPSy9ATMJIZ\nIIbUYubNQaAUu1qVxuMX6zM3yz83uiVf0NGAcRn6sonmVYwwCtjsXvfhmXtze9Ll\nJ68=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+      "passphrase": "141d9ee6a56d19a6ce9bf1d6ce6751bd"
+    }
+  },
+  "enterpriseID": "374696215"
+}

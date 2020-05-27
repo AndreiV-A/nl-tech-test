@@ -51,19 +51,19 @@
 					email: this.user.email,
 					password: this.user.password,
 				})
-					.then((data) => {
-						console.log('res:', data);
+					.then(res => {
+						console.log('res:', res);
 						this.$store.dispatch("retrieveToken", {
 							username: this.user.email,
 							password: this.user.password,
 						})
 					})
-					.then(response => {
+					.then(res => {
 						this.$router.push({ name: 'home' });
 					})
-					.catch((e) => {
-						console.log('error:', e);
-						this.error = e.response.data.message || 'There was an issue creating the user.';
+					.catch((err) => {
+						console.log('err:', err);
+						this.error = err.response.data.message || 'There was an issue creating the user.';
 					})
 					.then(() => this.loading = false)
 			}

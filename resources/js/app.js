@@ -6,6 +6,7 @@ import store from './store'
 import Home from './views/Home';
 import Users from './views/Users';
 import User from './views/User';
+import Files from './views/Files';
 import Login from './views/Login';
 import Logout from './views/Logout';
 import Register from './views/Register';
@@ -31,6 +32,11 @@ const router = new VueRouter({
             name: 'user.view',
             component: User,
         },
+		{
+			path: '/files',
+			name: 'files',
+			component: Files,
+		},
 		{
             path: '/login',
             name: 'login',

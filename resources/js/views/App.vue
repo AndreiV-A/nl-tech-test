@@ -4,6 +4,7 @@
         <p>
             <router-link :to="{ name: 'home' }">Home</router-link> |
 			<router-link :to="{ name: 'users' }">Users</router-link> |
+			<router-link :to="{ name: 'files' }">Files</router-link> |
 
 			<span v-if="this.$store.getters.loggedIn">
 				<span class="badge badge-success">{{this.$store.state.username}}</span>

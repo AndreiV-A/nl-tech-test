@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-						<div>Users list</div>
+						<div>Users</div>
 						<div v-if="loading">wait...</div>
 						<div v-if="error" class="badge badge-danger p-1">{{error}}</div>
 					</div>

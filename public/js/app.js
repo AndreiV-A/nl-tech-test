@@ -1991,11 +1991,9 @@ __webpack_require__.r(__webpack_exports__);
         if (err.response.status) {
           switch (err.response.status) {
             case 400:
-              _this.error = 'You need to input both email and password.';
-              break;
-
             case 401:
               _this.error = 'Wrong email or password or both.';
+              break;
 
             default:
               _this.error = 'Something went wrong.';

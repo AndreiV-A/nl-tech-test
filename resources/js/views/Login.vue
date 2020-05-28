@@ -48,7 +48,7 @@
 			login(){
 				this.loading = true;
 				this.$store.dispatch("retrieveToken", {
-					username: this.user.email,
+					email: this.user.email,
 					password: this.user.password
 				})
 				.then(res => {

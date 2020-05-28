@@ -2107,7 +2107,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = true;
       this.$store.dispatch("retrieveToken", {
-        username: this.user.email,
+        email: this.user.email,
         password: this.user.password
       }).then(function (res) {
         _this.loading = false;
@@ -2226,26 +2226,28 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = true;
       this.error = false;
+      console.log('email:', this.user.email);
+      console.log('password:', this.user.password);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/users', {
         email: this.user.email,
         password: this.user.password
       }).then(function (res) {
-        console.log('res:', res);
+        console.log('res:', res); // this.$store.dispatch("retrieveToken", {
+        // 	username: this.user.email,
+        // 	password: this.user.password,
+        // })
 
-        _this.$store.dispatch("retrieveToken", {
-          username: _this.user.email,
-          password: _this.user.password
-        });
-      }).then(function (res) {
-        _this.$router.push({
-          name: 'home'
-        });
-      })["catch"](function (err) {
-        console.log('err:', err);
-        _this.error = err.response.data.message || 'There was an issue creating the user.';
-      }).then(function () {
-        return _this.loading = false;
-      });
+        _this.$store.commit('storeToken', res.data.access_token);
+
+        _this.$store.commit('storeUsername', res.data.user.email);
+      }); // 	.then(res => {
+      // 		// this.$router.push({ name: 'home' });
+      // 	})
+      // 	.catch((err) => {
+      // 		console.log('err:', err);
+      // 		this.error = err.response.data.message || 'There was an issue creating the user.';
+      // 	})
+      // 	.then(() => this.loading = false)
     }
   }
 });
@@ -20463,16 +20465,16 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     retrieveToken: function retrieveToken(context, credentials) {
       return new Promise(function (resolve, reject) {
         axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/login', {
-          username: credentials.username,
+          email: credentials.email,
           password: credentials.password
-        }).then(function (response) {
-          //console.log(response)
-          var token = response.data.access_token;
+        }).then(function (res) {
+          // console.log('login.res:', res);
+          var token = res.data.access_token;
           localStorage.setItem('access_token', token);
           context.commit('storeToken', token);
-          localStorage.setItem('username', credentials.username);
-          context.commit('storeUsername', credentials.username);
-          resolve(response);
+          localStorage.setItem('username', credentials.email);
+          context.commit('storeUsername', credentials.email);
+          resolve(res);
         })["catch"](function (error) {
           //console.log(error)
           reject(error);
@@ -20486,13 +20488,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
             headers: {
               Authorization: "Bearer " + context.state.token
             }
-          }).then(function (response) {
-            // console.log(response)
+          }).then(function (res) {
+            // console.log(res)
             localStorage.removeItem('access_token');
             context.commit('deleteToken');
             localStorage.removeItem('username');
             context.commit('deleteUsername');
-            resolve(response);
+            resolve(res);
           })["catch"](function (error) {
             // console.log(error)
             localStorage.removeItem('access_token');

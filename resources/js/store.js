@@ -35,17 +35,17 @@ export default new Vuex.Store({
 		retrieveToken(context, credentials){
 			return new Promise((resolve, reject) => {
 				axios.post('/api/login', {
-					username: credentials.username,
+					email: credentials.email,
 					password: credentials.password,
 				})				
-				.then(response => {
-					//console.log(response)
-					const token = response.data.access_token
+				.then(res => {
+					// console.log('login.res:', res);
+					const token = res.data.access_token
 					localStorage.setItem('access_token', token)
 					context.commit('storeToken', token)
-					localStorage.setItem('username', credentials.username)
-					context.commit('storeUsername', credentials.username);
-					resolve(response)
+					localStorage.setItem('username', credentials.email)
+					context.commit('storeUsername', credentials.email);
+					resolve(res)
 				})
 				.catch(error => {
 					//console.log(error)
@@ -59,13 +59,13 @@ export default new Vuex.Store({
 					axios.post('/api/logout', '', {
 						headers: { Authorization: "Bearer " + context.state.token }
 					})
-					.then(response => {
-						// console.log(response)
+					.then(res => {
+						// console.log(res)
 						localStorage.removeItem('access_token')
 						context.commit('deleteToken')
 						localStorage.removeItem('username')
 						context.commit('deleteUsername');
-						resolve(response)
+						resolve(res)
 					})
 					.catch(error => {
 						// console.log(error)

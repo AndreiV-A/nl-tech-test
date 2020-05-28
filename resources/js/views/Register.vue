@@ -47,25 +47,29 @@
             onSubmit($event){
                 this.loading = true;
                 this.error = false;
+				console.log('email:', this.user.email);
+				console.log('password:', this.user.password);
 				axios.post('api/users', {
 					email: this.user.email,
 					password: this.user.password,
 				})
 					.then(res => {
 						console.log('res:', res);
-						this.$store.dispatch("retrieveToken", {
-							username: this.user.email,
-							password: this.user.password,
-						})
+						// this.$store.dispatch("retrieveToken", {
+						// 	username: this.user.email,
+						// 	password: this.user.password,
+						// })
+						this.$store.commit('storeToken', res.data.access_token)
+						this.$store.commit('storeUsername', res.data.user.email);
 					})
-					.then(res => {
-						this.$router.push({ name: 'home' });
-					})
-					.catch((err) => {
-						console.log('err:', err);
-						this.error = err.response.data.message || 'There was an issue creating the user.';
-					})
-					.then(() => this.loading = false)
+				// 	.then(res => {
+				// 		// this.$router.push({ name: 'home' });
+				// 	})
+				// 	.catch((err) => {
+				// 		console.log('err:', err);
+				// 		this.error = err.response.data.message || 'There was an issue creating the user.';
+				// 	})
+				// 	.then(() => this.loading = false)
 			}
 		}
 	}

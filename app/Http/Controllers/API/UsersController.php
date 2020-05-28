@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\User;
 
@@ -18,15 +20,21 @@ class UsersController extends Controller
 	}
 
 	public function store(Request $request){
-		$data = $request->validate([
-			'email' => 'required|unique:users',
+		$validated_data = $request->validate([
+			'email' => 'email|required|unique:users',
 			'password' => 'required|min:8',
 		]);
+		$validated_data['name'] = $validated_data['email'];
+		$validated_data['password'] = Hash::make($validated_data['password']);
+
+		$user = User::create($validated_data);
+		$accessToken = $user->createToken('authToken')->accessToken;
 		
-		return new UserResource(User::create([
-			'name' => $data['email'],
-			'email' => $data['email'],
-			'password' => bcrypt($data['password']),
-		]));
+		return response([
+			'user' => new UserResource($user),
+			'access_token' => $accessToken,
+		]);
+
+
 	}
 }
